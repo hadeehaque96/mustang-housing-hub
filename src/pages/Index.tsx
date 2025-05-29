@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,7 +14,7 @@ const Index = () => {
       location: "University Park",
       price: 850,
       duration: "Summer Sublet",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.8,
       reviews: 12,
       amenities: ["WiFi", "Furnished", "Parking"],
@@ -27,7 +26,7 @@ const Index = () => {
       location: "Highland Park",
       price: 650,
       duration: "3 Month Lease",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.9,
       reviews: 8,
       amenities: ["Pool", "Gym", "Laundry"],
@@ -39,7 +38,7 @@ const Index = () => {
       location: "Park Cities",
       price: 750,
       duration: "Flexible",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.7,
       reviews: 15,
       amenities: ["Pet-Friendly", "Backyard", "Kitchen"],

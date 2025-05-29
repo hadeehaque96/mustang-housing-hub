@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -20,7 +19,7 @@ const Listings = () => {
       location: "University Park",
       price: 850,
       duration: "Summer Sublet",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.8,
       reviews: 12,
       amenities: ["WiFi", "Furnished", "Parking"],
@@ -34,7 +33,7 @@ const Listings = () => {
       location: "Highland Park",
       price: 650,
       duration: "3 Month Lease",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.9,
       reviews: 8,
       amenities: ["Pool", "Gym", "Laundry"],
@@ -48,7 +47,7 @@ const Listings = () => {
       location: "Park Cities",
       price: 750,
       duration: "Flexible",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.7,
       reviews: 15,
       amenities: ["Pet-Friendly", "Backyard", "Kitchen"],
@@ -62,7 +61,7 @@ const Listings = () => {
       location: "Mockingbird Station",
       price: 1200,
       duration: "3-6 Month Lease",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.6,
       reviews: 23,
       amenities: ["AC", "Dishwasher", "Balcony"],
@@ -76,7 +75,7 @@ const Listings = () => {
       location: "Preston Center",
       price: 900,
       duration: "Summer Term",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.9,
       reviews: 7,
       amenities: ["Pool", "Furnished", "Parking", "Gym"],
@@ -90,7 +89,7 @@ const Listings = () => {
       location: "Bishop Arts District",
       price: 600,
       duration: "Month-to-Month",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       rating: 4.4,
       reviews: 19,
       amenities: ["Transit", "WiFi", "Kitchen Access"],
