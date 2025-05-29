@@ -139,33 +139,75 @@ const Map = () => {
         {/* Map Container */}
         <div className="flex-1 relative">
           {!mapboxToken ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-              <Card className="p-6 max-w-md mx-4">
-                <h3 className="text-lg font-semibold mb-4">Enter Mapbox Token</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  To display the interactive map, please enter your Mapbox public token. 
-                  You can get one free at <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">mapbox.com</a>
-                </p>
-                <div className="space-y-3">
-                  <Input
-                    placeholder="pk.eyJ1IjoieW91cnVzZXJuYW1lIiwi..."
-                    value={mapboxToken}
-                    onChange={(e) => setMapboxToken(e.target.value)}
-                  />
-                  <Button 
-                    onClick={() => {
-                      if (mapboxToken.startsWith('pk.')) {
-                        // Token looks valid
-                      } else {
-                        alert('Please enter a valid Mapbox token starting with "pk."');
-                      }
-                    }}
-                    className="w-full"
-                  >
-                    Load Map
-                  </Button>
+            <div className="absolute inset-0 bg-gray-100">
+              {/* Static Map Image with Overlaid Markers */}
+              <div className="relative w-full h-full">
+                <img 
+                  src="https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+                  alt="Map view of Dallas area"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-blue-50/30"></div>
+                
+                {/* Simulated Map Markers */}
+                <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-6 h-6 bg-blue-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div className="text-xs font-medium text-blue-600 mt-1 whitespace-nowrap">SMU Campus</div>
                 </div>
-              </Card>
+                
+                <div className="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" onClick={() => setSelectedListing(listings[0])}>
+                  <div className="w-6 h-6 bg-red-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div className="text-xs font-medium text-red-600 mt-1 whitespace-nowrap">$850/mo</div>
+                </div>
+                
+                <div className="absolute top-2/3 left-2/3 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" onClick={() => setSelectedListing(listings[1])}>
+                  <div className="w-6 h-6 bg-red-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div className="text-xs font-medium text-red-600 mt-1 whitespace-nowrap">$650/mo</div>
+                </div>
+                
+                <div className="absolute top-1/4 right-1/3 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" onClick={() => setSelectedListing(listings[2])}>
+                  <div className="w-6 h-6 bg-red-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div className="text-xs font-medium text-red-600 mt-1 whitespace-nowrap">$750/mo</div>
+                </div>
+              </div>
+              
+              {/* Token Input Overlay */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                <Card className="p-6 max-w-md mx-4 bg-white/95 backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold mb-4">Interactive Map</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Enter your Mapbox token for an interactive map experience. 
+                    Get one free at <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">mapbox.com</a>
+                  </p>
+                  <div className="space-y-3">
+                    <Input
+                      placeholder="pk.eyJ1IjoieW91cnVzZXJuYW1lIiwi..."
+                      value={mapboxToken}
+                      onChange={(e) => setMapboxToken(e.target.value)}
+                    />
+                    <Button 
+                      onClick={() => {
+                        if (mapboxToken.startsWith('pk.')) {
+                          // Token looks valid
+                        } else {
+                          alert('Please enter a valid Mapbox token starting with "pk."');
+                        }
+                      }}
+                      className="w-full"
+                    >
+                      Load Interactive Map
+                    </Button>
+                  </div>
+                </Card>
+              </div>
             </div>
           ) : (
             <div ref={mapContainer} className="absolute inset-0" />
@@ -182,20 +224,18 @@ const Map = () => {
           </div>
 
           {/* Legend */}
-          {mapboxToken && (
-            <Card className="absolute bottom-4 left-4 z-10 p-3">
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-red-600 rounded-full"></div>
-                  <span>Available Housing</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-                  <span>SMU Campus</span>
-                </div>
+          <Card className="absolute bottom-4 left-4 z-10 p-3">
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-red-600 rounded-full"></div>
+                <span>Available Housing</span>
               </div>
-            </Card>
-          )}
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                <span>SMU Campus</span>
+              </div>
+            </div>
+          </Card>
         </div>
 
         {/* Selected Listing Panel */}
